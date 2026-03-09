@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noxus Studio — Architecture & Interior Design</title>
+    <meta name="description" content="Noxus Studio is a premium architecture and interior design agency specializing in minimalist, modern spaces. We craft timeless environments.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ═══ LOADING OVERLAY ═══ -->
+    <div id="loading" aria-label="Loading">
+        <div class="loader-inner">
+            <div class="loader-logo">NOXUS</div>
+            <div class="loader-tagline">Architecture & Interior Design</div>
+            <div class="loader-bar-track">
+                <div id="loader-bar-fill"></div>
+            </div>
+            <div id="loader-percent">Rendering 0%</div>
+        </div>
+    </div>
+
+    <!-- ═══ PARALLAX CANVAS ═══ -->
+    <div class="canvas-wrap" id="canvas-wrap">
+        <canvas id="parallax-canvas"></canvas>
+        <div class="canvas-overlay"></div>
+    </div>
+
+    <!-- ═══ STICKY NAVBAR ═══ -->
+    <header class="navbar" id="navbar">
+        <a href="#" class="nav-brand">NOXUS<span class="brand-dot">.</span></a>
+        <nav class="nav-menu" id="nav-menu">
+            <a href="#studio" class="nav-link" data-section="studio">Studio</a>
+            <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+            <a href="#services" class="nav-link" data-section="services">Services</a>
+            <a href="#process" class="nav-link" data-section="process">Process</a>
+            <a href="#press" class="nav-link" data-section="press">Press</a>
+            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </nav>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+            <span></span><span></span>
+        </button>
+    </header>
+
+    <!-- ═══ HERO SECTION ═══ -->
+    <section class="hero" id="hero">
+        <div class="hero-content" id="hero-content">
+            <span class="hero-eyebrow" id="hero-eyebrow">— Featured Project</span>
+            <h1 class="hero-title" id="hero-title">The Lumina</h1>
+            <h2 class="hero-subtitle" id="hero-subtitle">Residential Villa</h2>
+            <p class="hero-desc" id="hero-desc">A minimalist sanctuary blending raw concrete with warm oak, maximizing natural light through expansive floor-to-ceiling glass.</p>
+            <div class="hero-actions">
+                <a href="#" class="btn btn-ghost" id="btn-view">View Project</a>
+                <a href="#contact" class="btn btn-white" id="btn-contact">Get in Touch</a>
+            </div>
+        </div>
+
+        <!-- Right-side navigation -->
+        <aside class="hero-nav" id="hero-nav">
+            <div class="hero-index" id="hero-index">01</div>
+            <div class="hero-nav-controls">
+                <button class="hero-nav-btn" id="prev-btn" aria-label="Previous project">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                    <span>Prev</span>
+                </button>
+                <div class="hero-nav-line">
+                    <div class="mini-spinner" id="mini-spinner"></div>
+                </div>
+                <button class="hero-nav-btn" id="next-btn" aria-label="Next project">
+                    <span>Next</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Bottom social -->
+        <div class="hero-social" id="hero-social">
+            <a href="#" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" aria-label="Pinterest">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 21c1-3 2-5 3-7 0 0-.5-1-.5-2.5C10.5 9 12 8 12 8s2 1 2 3.5c0 1-.5 2.5-.5 2.5l2 7"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5c0-1 1-2 2-2s2 1 2 2v5"/></svg>
+            </a>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-hint" id="scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"><div class="scroll-dot"></div></div>
+        </div>
+    </section>
+
+    <!-- ═══ SCROLL SPACER ═══ -->
+    <div id="scroll-spacer"></div>
+
+    <!-- ═══ CONTENT SECTIONS ═══ -->
+    <main class="main-content" id="main-content">
+
+        <!-- Studio -->
+        <section id="studio" class="sec">
+            <div class="sec-inner sec-grid">
+                <div class="sec-label-col">
+                    <span class="sec-label">01</span>
+                </div>
+                <div class="sec-body">
+                    <h2 class="sec-heading reveal">The Studio</h2>
+                    <p class="sec-text reveal">Noxus Studio is defined by an unwavering commitment to absolute minimalism. We shape spaces that evoke calm and clarity through the essentialist reduction of form — stripping away the superfluous to leave only what is truly necessary.</p>
+                    <p class="sec-text reveal">Founded in 2018, we operate at the intersection of architecture, interior design, and material innovation. Every project begins with a singular question: <em>what does the space want to become?</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="sec sec-dark">
+            <div class="sec-inner sec-grid">
+                <div class="sec-label-col">
+                    <span class="sec-label">02</span>
+                </div>
+                <div class="sec-body">
+                    <h2 class="sec-heading reveal">Selected Works</h2>
+                    <div class="project-list">
+                        <a href="#" class="project-row reveal">
+                            <span class="project-name">The Lumina</span>
+                            <span class="project-type">Residential Villa</span>
+                            <span class="project-year">2025</span>
+                            <span class="project-arrow">→</span>
+                        </a>
+                        <a href="#" class="project-row reveal">
+                            <span class="project-name">Horizon</span>
+                            <span class="project-type">Commercial Workspace</span>
+                            <span class="project-year">2024</span>
+                            <span class="project-arrow">→</span>
+                        </a>
+                        <a href="#" class="project-row reveal">
+                            <span class="project-name">Aethos</span>
+                            <span class="project-type">Boutique Hotel</span>
+                            <span class="project-year">2024</span>
+                            <span class="project-arrow">→</span>
+                        </a>
+                        <a href="#" class="project-row reveal">
+                            <span class="project-name">Monolith</span>
+                            <span class="project-type">Cultural Center</span>
+                            <span class="project-year">2023</span>
+                            <span class="project-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="sec">
+            <div class="sec-inner sec-grid">
+                <div class="sec-label-col">
+                    <span class="sec-label">03</span>
+                </div>
+                <div class="sec-body">
+                    <h2 class="sec-heading reveal">Services</h2>
+                    <div class="services-cards">
+                        <div class="svc-card reveal">
+                            <span class="svc-num">01</span>
+                            <h3 class="svc-title">Architecture</h3>
+                            <p class="svc-text">Residential, commercial and hospitality design grounded in spatial purity. We design forms that breathe with the landscape.</p>
+                        </div>
+                        <div class="svc-card reveal">
+                            <span class="svc-num">02</span>
+                            <h3 class="svc-title">Interior Design</h3>
+                            <p class="svc-text">Curated materiality, custom furnishings and bespoke lighting — every element tailored to the volume it inhabits.</p>
+                        </div>
+                        <div class="svc-card reveal">
+                            <span class="svc-num">03</span>
+                            <h3 class="svc-title">Landscape</h3>
+                            <p class="svc-text">Seamless indoor-outdoor integration, biophilic design principles, and sustainable terrain shaping for holistic environments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section id="process" class="sec sec-dark">
+            <div class="sec-inner sec-grid">
+                <div class="sec-label-col">
+                    <span class="sec-label">04</span>
+                </div>
+                <div class="sec-body">
+                    <h2 class="sec-heading reveal">Process & Materials</h2>
+                    <div class="process-specs">
+                        <div class="spec reveal">
+                            <div class="spec-label">Sustainability</div>
+                            <div class="spec-value">Locally sourced, low-carbon materials with verified environmental certifications. Every project targets net-zero operational energy.</div>
+                        </div>
+                        <div class="spec reveal">
+                            <div class="spec-label">Material Palette</div>
+                            <div class="spec-value">Charcoal stone, raw concrete, brushed brass, open-grain oak, hand-finished plaster, and recycled steel.</div>
+                        </div>
+                        <div class="spec reveal">
+                            <div class="spec-label">Execution</div>
+                            <div class="spec-value">End-to-end project management from conceptual design through construction supervision, with rigorous quality benchmarks at every milestone.</div>
+                        </div>
+                        <div class="spec reveal">
+                            <div class="spec-label">Timeline</div>
+                            <div class="spec-value">12–18 months from concept to completion for residential projects. Commercial commissions are scoped individually.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Press -->
+        <section id="press" class="sec">
+            <div class="sec-inner sec-grid">
+                <div class="sec-label-col">
+                    <span class="sec-label">05</span>
+                </div>
+                <div class="sec-body">
+                    <h2 class="sec-heading reveal">Press & Recognition</h2>
+                    <div class="press-grid">
+                        <div class="press-item reveal">
+                            <span class="press-source">Architectural Digest</span>
+                            <p class="press-quote">"Noxus redefines the meaning of quiet luxury in architecture."</p>
+                        </div>
+                        <div class="press-item reveal">
+                            <span class="press-source">Dezeen</span>
+                            <p class="press-quote">"A studio that treats negative space as its primary material."</p>
+                        </div>
+                        <div class="press-item reveal">
+                            <span class="press-source">Dwell Magazine</span>
+                            <p class="press-quote">"Among the most exciting minimalist practices working today."</p>
+                        </div>
+                    </div>
+                    <p class="press-award reveal">Recipient of the 2025 Global Design Award for Minimalist Excellence.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="sec sec-dark">
+            <div class="sec-inner sec-grid">
+                <div class="sec-label-col">
+                    <span class="sec-label">06</span>
+                </div>
+                <div class="sec-body">
+                    <h2 class="sec-heading reveal">Frequently Asked</h2>
+                    <div class="accordion">
+                        <div class="acc-item reveal">
+                            <button class="acc-trigger" aria-expanded="false">
+                                <span>What is your typical project timeline?</span>
+                                <span class="acc-icon"></span>
+                            </button>
+                            <div class="acc-panel">
+                                <p>Residential projects span 12–18 months from concept to completion. Hospitality and commercial commissions are scoped individually depending on scale and complexity.</p>
+                            </div>
+                        </div>
+                        <div class="acc-item reveal">
+                            <button class="acc-trigger" aria-expanded="false">
+                                <span>How do consultations work?</span>
+                                <span class="acc-icon"></span>
+                            </button>
+                            <div class="acc-panel">
+                                <p>We accept a limited number of commissions per year. Initial consultations are by direct inquiry or referral. During the first meeting, we discuss your vision, site, and budget framework.</p>
+                            </div>
+                        </div>
+                        <div class="acc-item reveal">
+                            <button class="acc-trigger" aria-expanded="false">
+                                <span>Do you work internationally?</span>
+                                <span class="acc-icon"></span>
+                            </button>
+                            <div class="acc-panel">
+                                <p>Yes. We have completed projects across Europe, the Middle East, and Southeast Asia. We partner with vetted local contractors in each region to ensure uncompromising quality.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="contact" class="sec sec-cta">
+            <div class="sec-inner cta-layout">
+                <div class="cta-image-wrap reveal">
+                    <img src="./cta-image.png" alt="Material Palette — Concrete, Marble, Brass" class="cta-image" loading="lazy">
+                </div>
+                <div class="cta-body reveal">
+                    <h2 class="sec-heading">Start Your<br>Project</h2>
+                    <p class="sec-text">Begin a conversation with our principal architects. Let us shape your vision into a living, breathing reality.</p>
+                    <a href="#" class="btn btn-white" style="margin-top:2.5rem;">Contact Studio</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <div class="footer-logo">NOXUS<span class="brand-dot">.</span></div>
+                    <p class="footer-copy">&copy; 2026 Noxus Studio. All rights reserved.</p>
+                </div>
+                <div class="footer-nav">
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Pinterest">PT</a>
+                    <a href="#" aria-label="LinkedIn">LI</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
